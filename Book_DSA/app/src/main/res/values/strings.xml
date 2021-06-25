@@ -1,0 +1,135 @@
+<resources>
+    <string name="app_name">Book_DSA</string>
+    <string name="arraytext"><pre>1
+    2</pre>
+of searching for a data item: the binary search.
+We’ll start the chapter with a Java Workshop applet that
+shows insertion, searching, and deletion in an array. Then
+we’ll show some sample Java code that carries out these
+same operations.
+Later we’ll examine ordered arrays, again starting with a
+Workshop applet. This applet will demonstrate a binary
+search. At the end of the chapter we’ll talk about Big O
+notation, the most widely used measure of algorithm
+efficiency.
+    The preceding section showed graphically the primary algorithms used for arrays.
+Now we’ll see how to write programs to carry out these algorithms, but we first want
+to cover a few of the fundamentals of arrays in Java.
+If you’re a Java expert, you can skip ahead to the next section, but even C and C++
+programmers should stick around. Arrays in Java use syntax similar to that in C and
+C++ (and not that different from other languages), but there are nevertheless some
+unique aspects to the Java approach.
+
+    Summary
+• Arrays in Java are objects, created with the new operator.
+• Unordered arrays offer fast insertion but slow searching and deletion.
+• Wrapping an array in a class protects the array from being inadvertently
+altered.
+• A class interface is composed of the methods (and occasionally fields) that the
+class user can access.
+• A class interface can be designed to make things simple for the class user.
+• A binary search can be applied to an ordered array.
+• The logarithm to the base B of a number A is (roughly) the number of times
+you can divide A by B before the result is less than 1.
+• Linear searches require time proportional to the number of items in an array.
+Summary 73
+03 0672324539 CH02 10/10/02 9:16 AM Page 73• Binary searches require time proportional to the logarithm of the number of
+items.
+• Big O notation provides a convenient way to compare the speed of algorithms.
+• An algorithm that runs in O(1) time is the best, O(log N) is good, O(N) is fair,
+and O(N2
+) is pretty bad</string>
+    <string name="linkedlist">Summary
+• A linked list consists of one linkedList object and a number of Link objects.
+• The linkedList object contains a reference, often called first, to the first link
+in the list.
+• Each Link object contains data and a reference, often called next, to the next
+link in the list.
+• A next value of null signals the end of the list.
+• Inserting an item at the beginning of a linked list involves changing the new
+link’s next field to point to the old first link and changing first to point to the
+new item.
+244 CHAPTER 5 Linked Lists
+06 0672324539 CH05 10/10/02 9:15 AM Page 244• Deleting an item at the beginning of a list involves setting first to point to
+first.next.
+• To traverse a linked list, you start at first and then go from link to link, using
+each link’s next field to find the next link.
+• A link with a specified key value can be found by traversing the list. Once
+found, an item can be displayed, deleted, or operated on in other ways.
+• A new link can be inserted before or after a link with a specified key value,
+following a traversal to find this link.
+• A double-ended list maintains a pointer to the last link in the list, often called
+last, as well as to the first.
+• A double-ended list allows insertion at the end of the list.
+• An Abstract Data Type (ADT) is a data storage class considered without
+reference to its implementation.
+• Stacks and queues are ADTs. They can be implemented using either arrays or
+linked lists.
+• In a sorted linked list, the links are arranged in order of ascending (or
+sometimes descending) key value.
+• Insertion in a sorted list takes O(N) time because the correct insertion point
+must be found. Deletion of the smallest link takes O(1) time.
+• In a doubly linked list, each link contains a reference to the previous link as
+well as the next link.
+• A doubly linked list permits backward traversal and deletion from the end of
+the list.
+• An iterator is a reference, encapsulated in a class object, that points to a link in
+an associated list.
+• Iterator methods allow the user to move the iterator along the list and access
+the link currently pointed to.
+• An iterator can be used to traverse through a list, performing some operation
+on selected links (or all links).
+Questions
+        import java.util.*;
+public class LinkedList3 {
+
+        public static void main(String [] args)
+        {
+
+           ll.add("Ravi");
+           ll.add("Vijay");
+           ll.add("Ajay");
+           ll.add("Anuj");
+           ll.add("Gaurav");
+           ll.add("Harsh");
+           ll.add("Virat");
+           ll.add("Gaurav");
+           ll.add("Harsh");
+           ll.add("Amit");
+           System.out.println("Initial list of elements: "+ll);
+         //Removing specific element from arraylist
+              ll.remove("Vijay");
+              System.out.println("After invoking remove(object) method: "+ll);
+         //Removing element on the basis of specific position
+              ll.remove(0);
+              System.out.println("After invoking remove(index) method: "+ll);
+
+              ll2.add("Ravi");
+              ll2.add("Hanumat");
+         // Adding new elements to arraylist
+              ll.addAll(ll2);
+              System.out.println("Updated list : "+ll);
+         //Removing all the new elements from arraylist
+              ll.removeAll(ll2);
+              System.out.println("After invoking removeAll() method: "+ll);
+         //Removing first element from the list
+              ll.removeFirst();
+              System.out.println("After invoking removeFirst() method: "+ll);
+          //Removing first element from the list
+              ll.removeLast();
+              System.out.println("After invoking removeLast() method: "+ll);
+          //Removing first occurrence of element from the list
+              ll.removeFirstOccurrence("Gaurav");
+              System.out.println("After invoking removeFirstOccurrence() method: "+ll);
+          //Removing last occurrence of element from the list
+              ll.removeLastOccurrence("Harsh");
+              System.out.println("After invoking removeLastOccurrence() method: "+ll);
+
+              //Removing all the elements available in the list
+              ll.clear();
+              System.out.println("After invoking clear() method: "+ll);
+       }
+    }
+
+    </string>
+</resources>

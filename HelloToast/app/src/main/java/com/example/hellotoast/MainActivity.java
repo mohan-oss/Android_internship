@@ -34,7 +34,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 if(i>0){
-                    i--;hello
+                    i--;
                 }
                 else if(i==0){
                     i=12;
